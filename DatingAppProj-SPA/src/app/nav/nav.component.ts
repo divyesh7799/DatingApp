@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { error } from '@angular/compiler/src/util';
+import { AlertyfyService } from '../_services/alertyfy.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,27 +11,26 @@ import { error } from '@angular/compiler/src/util';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService, private alertyfy: AlertyfyService) { }
 
   ngOnInit() {
   }
    login() {
     this.authService.login(this.model).subscribe(next => {
-      console.log('login successfully');
+     this.alertyfy.success('login successfully');
     // tslint:disable-next-line: no-shadowed-variable
     }, error => {
-      console.log(error);
+      this.alertyfy.error(error);
     });
   }
 
   loggedin() {
-    const token = localStorage.getItem('token');
-    return !!token;
+    return this.authService.loggedIn();
   }
 
   logout()  {
     localStorage.removeItem('token');
-    console.log('logout');
+    this.alertyfy.message('logout');
   }
 
 }
