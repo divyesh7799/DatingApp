@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { error } from '@angular/compiler/src/util';
 import { AlertyfyService } from '../_services/alertyfy.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -11,7 +12,7 @@ import { AlertyfyService } from '../_services/alertyfy.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(public authService: AuthService, private alertyfy: AlertyfyService) { }
+  constructor(public authService: AuthService, private alertyfy: AlertyfyService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,8 @@ export class NavComponent implements OnInit {
     // tslint:disable-next-line: no-shadowed-variable
     }, error => {
       this.alertyfy.error(error);
+    }, () => {
+      this.router.navigate(['/members']);
     });
   }
 
@@ -31,6 +34,7 @@ export class NavComponent implements OnInit {
   logout()  {
     localStorage.removeItem('token');
     this.alertyfy.message('logout');
+    this.router.navigate(['/home']);
   }
 
 }
