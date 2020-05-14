@@ -1,17 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UserSecretsId>586dfffa-609a-4f71-8d66-ff384e76c418</UserSecretsId>
   </PropertyGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup/>
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.5.1" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0"/>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.5.1"/>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.1"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0"/>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0"/>
   </ItemGroup>
 </Project>
