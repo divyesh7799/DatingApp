@@ -7,9 +7,11 @@ using DatingAppProj.API.Dtos;
 using System.Collections.Generic; 
 using System.Security.Claims;
 using System;
+using DatingAppProj.API.Helper;
 
 namespace DatingAppProj.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
@@ -32,7 +34,7 @@ namespace DatingAppProj.API.Controllers
             return Ok(usersToReturn);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetUser")]
         public async Task<IActionResult> GetUser(int id)
         {
             var user = await _repo.GetUser(id);
