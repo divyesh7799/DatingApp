@@ -58,7 +58,7 @@ namespace DatingAppProj.API.Controllers
             var file = photoForCreationDto.File;
             var uploadResult = new ImageUploadResult();
             if(file.Length > 0)
-            {
+            { 
                 using (var stream = file.OpenReadStream())
                 {
                     var uploadParams = new ImageUploadParams()
